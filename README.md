@@ -6,6 +6,9 @@ A task Management System Built Using:
     * Data Annotation
 * PostgresQL
 
+## Entity Diagram
+![Stock Manager](https://user-images.githubusercontent.com/74520811/192605597-e4fc5afa-0826-4965-a404-f826ea780376.png)
+
 ### System Functionality
 * Signup
 * Login (Basic Auth)
