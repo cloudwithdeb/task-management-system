@@ -43,4 +43,4 @@ A task Management System Built Using:
 ### References
 * Cron job scheduling: https://blog.devart.com/scheduling-cron-jobs-in-asp-net-6-and-c.html
 * Entity Framework Core: https://www.entityframeworktutorial.net/efcore/entity-framework-core.aspx
-* Webapi 6 docs: 
+* Webapi 6 docs: https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&tabs=visual-studio
