@@ -19,9 +19,9 @@ public class RemainderRepository : IRemainderRepository
         {
             Description=remainder.Description,
             task=Convert.ToInt32(remainder.task),
-            StartDate=remainder.StartDate,
-            EndDate=remainder.EndDate,
-            IsActivatedDate=DateTime.UtcNow
+            StartDate=DateTime.UtcNow,
+            EndDate=DateTime.UtcNow.AddDays(Convert.ToInt32(remainder.numberOfDays)),
+            IsActivatedDate=DateTime.UtcNow.AddDays(-1)
         };
 
         _dbcontext.RemainderModel.Add(_users_remainder);

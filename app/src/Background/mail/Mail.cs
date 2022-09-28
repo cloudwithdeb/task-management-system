@@ -26,9 +26,7 @@ public class Mail : IMail
         smtp.EnableSsl = true;
         smtp.UseDefaultCredentials = false;
         smtp.Host = "smtp.gmail.com";
-        smtp.Credentials = new NetworkCredential(_config.GetConnectionString("EMAIL"),
-                                                _config.GetConnectionString("PASSWORD"));
+        smtp.Credentials = new NetworkCredential(_config.GetConnectionString("EMAIL"),_config.GetConnectionString("EMAIL_PASSWORD"));
         smtp.Send(mail);
-
     }
 }

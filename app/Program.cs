@@ -10,8 +10,10 @@ using LoginSignupRepositoryNamespace;
 using LoginSignupServiceNS;
 using MailNamespace;
 using Microsoft.EntityFrameworkCore;
+using Quartz;
 using RemainderRepositoryNamespace;
 using RemainderServiceNamespace;
+using SchedulerNmaespace;
 using TaskRepositoryNamespace;
 using TaskServiceNamespace;
 
@@ -36,6 +38,21 @@ builder.Services.AddScoped<IRemainderService, RemainderService>();
 
 // Mail Register
 builder.Services.AddScoped<IMail, Mail>();
+
+// Quartz.Net Job register
+builder.Services.AddQuartz(q =>
+{
+    q.UseMicrosoftDependencyInjectionScopedJobFactory();
+    var jobKey = new JobKey("DemoJob");
+    q.AddJob<SchedulerJob>(opts => opts.WithIdentity(jobKey));
+
+    q.AddTrigger(opts => opts
+        .ForJob(jobKey)
+        .WithIdentity("DemoJob-trigger")
+        .WithCronSchedule("0/10 * * * * ?"));
+
+});
+builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
