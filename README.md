@@ -6,6 +6,23 @@ A task Management System Built Using:
     * Data Annotation
 * PostgresQL
 
+### System Functionality
+* Signup
+* Login (Basic Auth)
+* Task Functionality
+    * Add Task
+    * Get Task
+    * Delete Task
+    * Update Task
+
+* Add Remainder
+    * Add Remainder
+    * Delete Remainder
+    * Get Remainder
+    * Update Remainder
+
+* Automatic Email Alert For Tasks
+
 ### Note:
 * Postgres version 12 and above is installed.
 * .Net core 6 is installed.
@@ -39,6 +56,15 @@ A task Management System Built Using:
   * `dotnet ef migrations add taskManager`
   * `dotnet ef database update`
   * `dotnet watch run`
+
+### Improvement
+* Authentication:
+    * JWT Tokens can be used to improve higher security.
+    * 2 Factor can be also be implemented.
+    * When deployed unto azure, API manager can be used to protect endpoint.
+
+* Job Scheduling:
+    Azure Function Time Schedular can be used for better scalling instead of manually implemeting it.
 
 ### References
 * Cron job scheduling: https://blog.devart.com/scheduling-cron-jobs-in-asp-net-6-and-c.html
